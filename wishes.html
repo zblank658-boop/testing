@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweet Wishes For You 🌸</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Quicksand:wght@500;700&display=swap');
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: linear-gradient(135deg, #ffe5ec, #ffc2d1);
+            font-family: 'Quicksand', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem 1rem;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        header h1 {
+            font-family: 'Fredoka One', cursive;
+            color: #fb6f92;
+            font-size: 2.8rem;
+            text-shadow: 2px 2px white;
+        }
+
+        .main-card {
+            background: white;
+            border-radius: 24px;
+            padding: 2.5rem;
+            max-width: 550px;
+            width: 100%;
+            box-shadow: 0 10px 25px rgba(251, 111, 146, 0.15);
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .profile-space {
+            width: 100px;
+            height: 100px;
+            background: #ffe5ec;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2.5rem;
+            border: 4px solid #ff8fab;
+        }
+
+        /* Cute featured image style */
+        .featured-cute-img {
+            width: 100%;
+            max-height: 250px;
+            object-fit: cover;
+            border-radius: 16px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 5px 15px rgba(251, 111, 146, 0.1);
+        }
+
+        .letter {
+            color: #555;
+            line-height: 1.8;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .close-btn {
+            background: #fb6f92;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(251, 111, 146, 0.3);
+        }
+
+        .close-btn:hover {
+            background: #ff8fab;
+            transform: scale(1.03);
+        }
+
+        .back-link {
+            color: #ff8fab;
+            text-decoration: none;
+            font-weight: 700;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>For Someone Special 🧸</h1>
+    </header>
+
+    <main class="main-card">
+        <div class="profile-space">🎂</div>
+        
+        <!-- Added Cute Image Placeholder -->
+        <img class="featured-cute-img" src="https://images.unsplash.com/photo-1513151233558-d860c5398176?w=600&auto=format&fit=crop&q=80" alt="Cute Celebration">
+
+        <div class="letter">
+            <p>May your day be filled with sweet moments, soft laughter, and endless joy. You bring so much bright energy into the world, and you deserve nothing less than the absolute best today and every single day. I hope this new chapter of your life brings you endless happiness, success, and beautiful moments that you will always remember. Keep smiling, keep shining, and never stop being the wonderful person you are. Jangan baran-baran tau, always stay calm and happy. </p>
+        </div>
+
+        <div style="margin-top: 2rem; display: flex; flex-direction: column; gap: 10px; align-items: center;">
+            <p style="font-size: 0.95rem; color: #888;">Ready to see what's next?</p>
+            <a href="gift.html" class="close-btn">
+                Go to Gift Room 🎁
+            </a>
+        </div>
+    </main>
+
+    <a href="memories.html" class="back-link">← Go to Memory Lane 📸</a>
+
+</body>
+</html>

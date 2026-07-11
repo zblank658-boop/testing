@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday! 🎉</title>
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body, html { width: 100%; height: 100%; overflow: hidden; background: #ffe5ec; }
+        
+        /* The structural frame displaying your pages */
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- This frame holds all your actual pages and swaps them internally -->
+    <iframe src="index.html" id="siteContent"></iframe>
+
+    <!-- This audio element stays alive and plays forever in the background -->
+    <audio id="birthdayMusic" loop preload="auto">
+        <source src="Happy Birthday! - Jazzy Piano Arrangement by Jonny May.mp3" type="audio/ogg">
+        <!-- Tip: Swap the src above with your own local track, e.g., src="birthday.mp3" -->
+    </audio>
+
+    <script>
+        // Listen for the secret cue from index.html to start the music track
+        window.addEventListener("message", function(event) {
+            if (event.data === "play_birthday_song") {
+                const audio = document.getElementById("birthdayMusic");
+                audio.play().catch(err => console.log("Audio play blocked or delayed:", err));
+            }
+        });
+    </script>
+</body>
+</html>
