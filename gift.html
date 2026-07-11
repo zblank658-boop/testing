@@ -226,6 +226,7 @@
         const giftBox = document.getElementById('giftBox');
         const modal = document.getElementById('surpriseModal');
         const closeBtn = document.getElementById('closeBtn');
+        const audio = document.getElementById("finalSurpriseMusic"); // Moved outside for easier access
 
         function launchCelebration() {
             const icons = ['🎈', '💖', '✨', '🍰', '🌸', '👑', '💌'];
@@ -245,23 +246,30 @@
             }
         }
 
+        // Function to handle stopping the music and resetting it
+        function stopMusic() {
+            audio.pause();
+            audio.currentTime = 0; // Resets song back to the beginning
+        }
+
         giftBox.addEventListener('click', () => {
             modal.classList.add('open');
             giftBox.innerText = '🍰';
             giftBox.style.animation = 'none';
             launchCelebration();
 
-            const audio = document.getElementById("finalSurpriseMusic");
             audio.play().catch(err => console.log("Audio play blocked:", err));
         });
 
         closeBtn.addEventListener('click', () => {
             modal.classList.remove('open');
+            stopMusic(); // Stop music when clicking "Go Back" button
         });
 
         window.addEventListener('click', (e) => {
             if (e.target === modal) {
                 modal.classList.remove('open');
+                stopMusic(); // Stop music when clicking outside the letter
             }
         });
     </script>
