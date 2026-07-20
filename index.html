@@ -1,205 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday! 🎉</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Quicksand:wght@500;700&display=swap');
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday! 🎉</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Quicksand:wght@500;700&display=swap');
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-        body {
-            background: linear-gradient(135deg, #ffe5ec, #ffc2d1);
-            font-family: 'Quicksand', sans-serif;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 1rem;
-            overflow-x: hidden;
-        }
+        body {
+            background: linear-gradient(135deg, #ffe5ec, #ffc2d1);
+            font-family: 'Quicksand', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            overflow-x: hidden;
+        }
 
-        .welcome-card {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(8px);
-            padding: 3rem 2rem;
-            border-radius: 24px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(251, 111, 146, 0.2);
-            max-width: 450px;
-            width: 100%;
-        }
+        .welcome-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(8px);
+            padding: 3rem 2rem;
+            border-radius: 24px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(251, 111, 146, 0.2);
+            max-width: 450px;
+            width: 100%;
+        }
 
-        h1 {
-            font-family: 'Fredoka One', cursive;
-            color: #fb6f92;
-            margin-bottom: 1rem;
-            font-size: 2.2rem;
-        }
+        h1 {
+            font-family: 'Fredoka One', cursive;
+            color: #fb6f92;
+            margin-bottom: 1rem;
+            font-size: 2.2rem;
+        }
 
-        p {
-            color: #6c757d;
-            font-size: 1.05rem;
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
-        }
+        p {
+            color: #6c757d;
+            font-size: 1.05rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
 
-        /* Cute Birthday Countdown Styles */
-        .countdown-container {
-            display: flex;
-            justify-content: space-around;
-            background: rgba(251, 111, 146, 0.1);
-            padding: 1rem;
-            border-radius: 16px;
-            margin-bottom: 2rem;
-            border: 2px dashed #ff8fab;
-        }
+        /* Cute Birthday Countdown Styles */
+        .countdown-container {
+            display: flex;
+            justify-content: space-around;
+            background: rgba(251, 111, 146, 0.1);
+            padding: 1rem;
+            border-radius: 16px;
+            margin-bottom: 2rem;
+            border: 2px dashed #ff8fab;
+        }
 
-        .countdown-box {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 22%;
-        }
+        .countdown-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 22%;
+        }
 
-        .countdown-num {
-            font-family: 'Fredoka One', cursive;
-            font-size: 1.8rem;
-            color: #fb6f92;
-        }
+        .countdown-num {
+            font-family: 'Fredoka One', cursive;
+            font-size: 1.8rem;
+            color: #fb6f92;
+        }
 
-        .countdown-label {
-            font-size: 0.75rem;
-            color: #ff8fab;
-            text-transform: uppercase;
-            font-weight: 700;
-            margin-top: 2px;
-        }
+        .countdown-label {
+            font-size: 0.75rem;
+            color: #ff8fab;
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-top: 2px;
+        }
 
-        .start-btn {
-            background: #fb6f92;
-            color: white;
-            border: none;
-            padding: 15px 30px;
-            border-radius: 30px;
-            font-size: 1.2rem;
-            font-weight: 700;
-            box-shadow: 0 5px 15px rgba(251, 111, 146, 0.4);
-            transition: all 0.3s ease;
-            cursor: pointer;
-            width: 100%;
-        }
+        .start-btn {
+            background: #fb6f92;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            box-shadow: 0 5px 15px rgba(251, 111, 146, 0.4);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            width: 100%;
+        }
 
-        .start-btn:hover:not(:disabled) {
-            background: #ff8fab;
-            transform: scale(1.05);
-            box-shadow: 0 8px 20px rgba(255, 143, 171, 0.6);
-        }
+        .start-btn:hover {
+            background: #ff8fab;
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(255, 143, 171, 0.6);
+        }
 
-        /* Locked state styling */
-        .start-btn:disabled {
-            background: #cccccc;
-            color: #888888;
-            box-shadow: none;
-            cursor: not-allowed;
-            transform: none;
-        }
+        .cake-emoji {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+            animation: bounce 2s infinite;
+        }
 
-        .cake-emoji {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-            display: inline-block;
-            animation: bounce 2s infinite;
-        }
-
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-    </style>
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+    </style>
 </head>
 <body>
 
-    <div class="welcome-card">
-        <div class="cake-emoji">🎂</div>
-        <h1>A Special Surprise Awaits!</h1>
-        <p>Hi! I made something special just for you. Tap the button below when the countdown ends! ✨</p>
-        
-        <div class="countdown-container">
-            <div class="countdown-box">
-                <span class="countdown-num" id="days">00</span>
-                <span class="countdown-label">Days</span>
-            </div>
-            <div class="countdown-box">
-                <span class="countdown-num" id="hours">00</span>
-                <span class="countdown-label">Hrs</span>
-            </div>
-            <div class="countdown-box">
-                <span class="countdown-num" id="minutes">00</span>
-                <span class="countdown-label">Mins</span>
-            </div>
-            <div class="countdown-box">
-                <span class="countdown-num" id="seconds">00</span>
-                <span class="countdown-label">Secs</span>
-            </div>
-        </div>
-        
-        <!-- Button starts locked/disabled -->
-        <button class="start-btn" id="enterBtn" >Locked 🔒</button>
-    </div>
+    <div class="welcome-card">
+        <div class="cake-emoji">🎂</div>
+        <h1>A Special Surprise Awaits!</h1>
+        <p>Hi! I made something special just for you. Tap the button below to open your door! ✨</p>
+        
+        <div class="countdown-container">
+            <div class="countdown-box">
+                <span class="countdown-num" id="days">00</span>
+                <span class="countdown-label">Days</span>
+            </div>
+            <div class="countdown-box">
+                <span class="countdown-num" id="hours">00</span>
+                <span class="countdown-label">Hrs</span>
+            </div>
+            <div class="countdown-box">
+                <span class="countdown-num" id="minutes">00</span>
+                <span class="countdown-label">Mins</span>
+            </div>
+            <div class="countdown-box">
+                <span class="countdown-num" id="seconds">00</span>
+                <span class="countdown-label">Secs</span>
+            </div>
+        </div>
+        
+        <button class="start-btn" id="enterBtn">Click to Enter 🚪</button>
+    </div>
 
-    <script>
-        // Set the countdown target to July 20th
-        const birthdayTarget = new Date("July 20, 2026 20:00:00").getTime();
-        const enterBtn = document.getElementById('enterBtn');
+    <script>
+        // Set the countdown target to August 22nd
+        const birthdayTarget = new Date("Aug 22, 2026 00:00:00").getTime();
 
-        function updateCountdown() {
-            const now = new Date().getTime();
-            const difference = birthdayTarget - now;
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const difference = birthdayTarget - now;
 
-            // If the birthday date has arrived or passed
-            if (difference <= 0) {
-                document.getElementById("days").innerText = "00";
-                document.getElementById("hours").innerText = "00";
-                document.getElementById("minutes").innerText = "00";
-                document.getElementById("seconds").innerText = "00";
-                
-                // Unlock the button
-                enterBtn.disabled = false;
-                enterBtn.innerText = "Open Your Surprise! 🎁";
-                return;
-            }
+            // If the birthday date has passed
+            if (difference < 0) {
+                document.getElementById("days").innerText = "00";
+                document.getElementById("hours").innerText = "00";
+                document.getElementById("minutes").innerText = "00";
+                document.getElementById("seconds").innerText = "00";
+                return;
+            }
 
-            // Calculations for days, hours, minutes, and seconds
-            const d = Math.floor(difference / (1000 * 60 * 60 * 24));
-            const h = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const m = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-            const s = Math.floor((difference % (1000 * 60)) / 1000);
+            // Calculations for days, hours, minutes, and seconds
+            const d = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const h = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const m = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const s = Math.floor((difference % (1000 * 60)) / 1000);
 
-            // Add a leading zero if the number is single-digit
-            document.getElementById("days").innerText = d < 10 ? "0" + d : d;
-            document.getElementById("hours").innerText = h < 10 ? "0" + h : h;
-            document.getElementById("minutes").innerText = m < 10 ? "0" + m : m;
-            document.getElementById("seconds").innerText = s < 10 ? "0" + s : s;
-        }
+            // Add a leading zero if the number is single-digit
+            document.getElementById("days").innerText = d < 10 ? "0" + d : d;
+            document.getElementById("hours").innerText = h < 10 ? "0" + h : h;
+            document.getElementById("minutes").innerText = m < 10 ? "0" + m : m;
+            document.getElementById("seconds").innerText = s < 10 ? "0" + s : s;
+        }
 
-        // Initialize and run the timer every second
-        updateCountdown();
-        const timerInterval = setInterval(updateCountdown, 1000);
+        // Initialize and run the timer every second
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
 
-        // Page redirection logic
-        enterBtn.addEventListener('click', function() {
-            const now = new Date().getTime();
-            if (now >= birthdayTarget) {
-                window.location.href = "memories.html";
-            }
-        });
-    </script>
+        // Page redirection
+        document.getElementById('enterBtn').addEventListener('click', function() {
+            window.location.href = "memories.html";
+        });
+    </script>
 </body>
 </html>
+
+can you make it like they cannot click the button if not the date
