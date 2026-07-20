@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Lane 🌸</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Quicksand:wght@500;700&display=swap');
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background: linear-gradient(135deg, #ffe5ec, #ffc2d1);
+            font-family: 'Quicksand', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem 1rem;
+        }
+
+        h1 {
+            font-family: 'Fredoka One', cursive;
+            color: #fb6f92;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px white;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Made cards slightly wider on mobile screen */
+            gap: 25px;
+            max-width: 950px;
+            width: 100%;
+            margin-bottom: 2.5rem;
+        }
+
+        .polaroid {
+            background: white;
+            padding: 12px;
+            padding-bottom: 20px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(251, 111, 146, 0.15);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+            /* Sweet Touch: Natural dynamic random scatter angles */
+            .gallery-grid .polaroid:nth-child(odd) { transform: rotate(-2.5deg); }
+            .gallery-grid .polaroid:nth-child(even) { transform: rotate(3deg); }
+            .gallery-grid .polaroid:nth-child(3n) { transform: rotate(-1.5deg); }
+
+            /* Straighten dynamically on focus hover */
+            .gallery-grid .polaroid:hover {
+                transform: scale(1.06) rotate(0deg) translateY(-5px);
+                box-shadow: 0 15px 30px rgba(251, 111, 146, 0.3);
+                z-index: 5;
+        }
+
+        .polaroid:hover {
+            transform: scale(1.05) rotate(1.5deg);
+        }
+
+        /* Polaroid Image Sizing */
+        .polaroid img {
+            width: 100%;        /* Stretches the image to full polaroid card width */
+            height: 280px;       /* Increased height slightly to balance the wider view */
+            object-fit: cover;   /* Crops perfectly to fill the width edge-to-edge */
+            object-position: center 15%; /* Shifts portrait focus up so her face isn't cut off */
+            border-radius: 8px;
+            margin-bottom: 12px;
+        }
+
+        .polaroid p {
+            color: #6c757d;
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+
+        .nav-btn {
+            background: #ff8fab;
+            color: white;
+            text-decoration: none;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255, 143, 171, 0.4);
+            margin-top: 1rem;
+        }
+
+        .nav-btn:hover {
+            background: #fb6f92;
+            box-shadow: 0 8px 20px rgba(251, 111, 146, 0.6);
+        }
+
+        .back-link {
+            color: #ff8fab;
+            text-decoration: none;
+            font-weight: 700;
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Your Sweetest Memories 📸</h1>
+
+    <div class="gallery-grid">
+        <div class="polaroid">
+            <img src="Nami1.jpg" alt="Nami">
+            <p>Child Nami ✨</p>
+        </div>
+        <div class="polaroid">
+            <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=400&auto=format&fit=crop&q=80" alt="Sweet cake">
+            <p>Sweetest Moments 🍓</p>
+        </div>
+        <div class="polaroid">
+            <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=400&auto=format&fit=crop&q=80" alt="Celebration vibe">
+            <p>Countless Shared Laughs 🎉</p>
+        </div>
+        <div class="polaroid">
+            <img src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?w=400&auto=format&fit=crop&q=80" alt="Cute flowers">
+            <p>Wishing You Joy Always 🌸</p>
+        </div>
+    </div>
+
+    <a href="wishes.html" class="nav-btn">Go Wishes Room 🎁</a>
+    <a href="index.html" class="back-link">← Back to Main Page</a>
+
+</body>
+</html>
